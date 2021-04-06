@@ -6,7 +6,7 @@ $(function () {
     console.log("should call render");
     renderCart();
   });
-  fetch("products.json")
+  fetch("https://fakestoreapi.com/products")
     .then((response) => response.json())
     .then((response) => (products = response))
     .then((response) => renderProducts(response));

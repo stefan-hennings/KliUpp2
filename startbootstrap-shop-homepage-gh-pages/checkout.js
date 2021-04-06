@@ -1,7 +1,7 @@
 // let products = [];
 $(function () {
   console.log("something");
-  fetch("products.json")
+  fetch("https://fakestoreapi.com/products")
     .then((response) => response.json())
     .then((response) => (products = response))
     .then((response) => renderCheckout(response));
@@ -37,32 +37,6 @@ function renderCheckout(products) {
   $("#checkout-output").html(output);
   console.log("output processed");
 }
-
-// // Example starter JavaScript for disabling form submissions if there are invalid fields
-// (function () {
-//   "use strict";
-
-//   // Fetch all the forms we want to apply custom Bootstrap validation styles to
-//   let forms = document.querySelectorAll(".needs-validation");
-
-//   // Loop over them and prevent submission
-//   Array.prototype.slice.call(forms).forEach(function (form) {
-//     form.addEventListener("click",
-//       function (event) {
-//         if (!form.checkValidity()) {
-//           console.log("falsk?");
-//           event.preventDefault();
-//           event.stopPropagation();
-//         } else {
-//             validated();
-//         }
-//         form.classList.add("was-validated");
-//       },
-//       false
-//     );
-//   });
-
-// })();
 
 function validatePhone(input) {
   const phonePattern = /^[(]{0,1}[0-9]{2,4}[)]{0,1}[-\s.]{0,1}[0-9]{3}[-\s.]{0,1}[0-9]{2,6}$/;
